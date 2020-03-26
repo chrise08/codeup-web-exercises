@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkout</title>
+</head>
+<body>
+	<form action="https://request-inspector.glitch.me">
+		<label for="card-number">Credit card number: </label>
+		<input type="text" name="card-number" id="card-number" autofocus required>
+		<br>
+		<br>
+		<label for="card-expiration">Expiration date: </label>
+		<input type="text" name="card-expiration" id="card-expiration" placeholder="mm/yyyy" required>
+		<br>
+		<br>
+		<label for="security-code">CVV: </label>
+		<input type="password" name="security-code" id="security-code" required>
+		<br>
+		<br>
+		<label for="billing-address">Billing address: </label>
+		<input type="text" name="billing-address" id="billing-address" required>
+		<br>
+		<br>
+		<label for="billing-city">City: </label>
+		<input type="text" name="billing-city" id="billing-city" required>
+		<br>
+		<br>
+		<label for="billing-state">State: </label>
+		<input type="text" name="billing-state" id="billing-state" required>
+		<br>
+		<br>
+		<label for="billing-zip">Zipcode: </label>
+		<input type="text" name="billing-zip" id="billing-zip" required>
+		<br>
+		<br>
+		<label><input type="checkbox" name="keep-on-file" value="yes" checked>Keep this credit card on file for
+			future transactions</label>
+		<br>
+		<br>
+		<button type="submit">Buy Now!</button>
+	</form>
+</body>
+</html>
