@@ -1,3 +1,95 @@
-.fancy-header {
-	color: purple;
+header {
+	text-align: center;
+}
+
+h1 {
+	color: #034f84;
+	text-decoration: underline;
+}
+
+h2 {
+	color: #034f84;
+	text-decoration: underline;
+	border: 2px solid #ffffff;
+	border-left-color: #f7786b;
+	border-top-color: #f7786b;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color: #ffffff;
+	width: 200px;
+}
+
+body {
+	background-color: #f7786b;
+	background-image: url("../img/cityscape.jpg");
+	background-size: cover;
+	font-family: 'Sen', sans-serif;
+}
+
+hr  {
+	color: #92a8d1;
+}
+
+p, li {
+	color: #f7786b;
+}
+
+th, td {
+	color: #ffffff;
+}
+
+ul.no-bullet {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+li.thin-client {
+	background: url("../img/icons8-thin-client-24.png") no-repeat left top;
+	height: 24px;
+	padding-bottom: 15px;
+	padding-top: 3px;
+	padding-left: 30px;
+}
+
+ol {
+	list-style: upper-roman;
+}
+
+table {
+	border-collapse: collapse;
+	text-align: center;
+}
+
+.product-pricing td {
+	padding: 20px;
+	border: 1px solid #f7786b;
+	background-color: #92a8d1;
+}
+
+.product-pricing th {
+	font-size: 1.25em;
+	text-decoration: underline;
+	border: 1px solid #f7786b;
+	background-color: #92a8d1;
+}
+
+/* unvisited link (:link) */
+a:link {
+	color:#034f84;
+}
+
+/* visited link (:visited) */
+a:visited {
+	color:#000000;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+	color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+	color: red;
 }
