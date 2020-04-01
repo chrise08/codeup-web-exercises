@@ -23,6 +23,23 @@
 		console.log(isAtLeastEightLong("dog")); // false
 		console.log(isAtLeastEightLong("hello world")); // true
 		
+		// Write a function, twoMoreAwayFromZero that takes in a number input and returns a number two more away from zero
+		// than the original input. Negative number inputs will be reduced by two and positive numbers and zero will be increased by two.
+		
+		function twoMoreAwayFromZero(i) {
+			if (i >= 0) {
+				return i + 2
+			} else {
+				return i - 2
+			}
+		}
+		
+		console.log(twoMoreAwayFromZero(0)); // 2
+		console.log(twoMoreAwayFromZero(2)); // 4
+		console.log(twoMoreAwayFromZero(-2)); // -4
+		console.log(twoMoreAwayFromZero(1.5)); // 3.5
+		console.log(twoMoreAwayFromZero(-0.5)); // -2.5
+		
 	</script>
 </body>
 </html>
