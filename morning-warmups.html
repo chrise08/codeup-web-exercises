@@ -73,6 +73,22 @@
 		console.log(isEven(3)); // false
 		console.log(isEven("Hello World")); // false
 		console.log(isEven(400)); // true
+		
+		// Write a function, returnEvenOddMessage, that takes in a number input and returns the string "is even" if
+		// the number input is even and returns the string "is odd" if the number input is odd.
+		
+		function returnEvenOddMessage(num) {
+			if (isEven(num)) {
+				return "is even"
+			} else {
+				return "is odd"
+			}
+		}
+		
+		console.log(returnEvenOddMessage(2)); // is even
+		console.log(returnEvenOddMessage(3)); // is odd
+		console.log(returnEvenOddMessage(24)); // is even
+		console.log(returnEvenOddMessage(345578)); // is even
 	</script>
 </body>
 </html>
