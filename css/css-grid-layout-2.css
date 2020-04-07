@@ -1,0 +1,24 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.container {
+	text-align: start;
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	grid-gap: .5em;
+	grid-template: repeat(8, 1fr) / repeat(13, 1fr) /* 13x8 */
+}
+
+.container * {
+	background-color: #9acd32;
+	padding: 1em;
+}
+
+.head {grid-area: 1 / 1 / 2 / -1}
+.nav {grid-area: 2 / 1 / -2 / 4}
+.art {grid-area: 2 / 4 / -3 / -1}
+.ads {grid-area: -3 / 4 / -2 / -1}
+.footer {grid-area: -2 / 1 / -1 / -1}
