@@ -28,9 +28,9 @@
 		
 		function twoMoreAwayFromZero(i) {
 			if (i >= 0) {
-				return i + 2
+				return i + 2;
 			} else {
-				return i - 2
+				return i - 2;
 			}
 		}
 		
@@ -79,9 +79,9 @@
 		
 		function returnEvenOddMessage(num) {
 			if (isEven(num)) {
-				return "is even"
+				return "is even";
 			} else {
-				return "is odd"
+				return "is odd";
 			}
 		}
 		
@@ -89,6 +89,18 @@
 		console.log(returnEvenOddMessage(3)); // is odd
 		console.log(returnEvenOddMessage(24)); // is even
 		console.log(returnEvenOddMessage(345578)); // is even
+		
+		// Write a javascript function that returns true or false as to whether or not a number passed into the function is a whole number.
+		
+		function wholeNumber(num) {
+			return num === Math.round(num);
+		}
+		
+		console.log(wholeNumber(2)); // true
+		console.log(wholeNumber(22.4)); // false
+		console.log(wholeNumber(500)); // true
+		console.log(wholeNumber("derek")); // false
+		
 	</script>
 </body>
 </html>
