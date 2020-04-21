@@ -1,3 +1,5 @@
+(function () {
+
 "use strict";
 
 /**
@@ -119,3 +121,5 @@ function applyDiscount(priceBeforeDiscount, discountPercent) {
 }
 
 console.log(applyDiscount(100, 0.25));
+
+})();
