@@ -23,11 +23,9 @@ console.log(sayHello("Jerry"));
  * console.log 'helloMessage' to check your work
  */
 
-function helloMessage() {
-	return sayHello("Chris");
-}
+var helloMessage = sayHello("Chris");
 
-console.log(helloMessage());
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -94,9 +92,9 @@ console.log(calculateTip(20, 100));
  * then display the dollar amount they should tip
  */
 
-var billTotal = prompt("What is your bill total?");
-var percentToTip = prompt("What percentage would you like to tip?");
-var amountToTip = calculateTip(billTotal, percentToTip);
+var billTotal = parseInt(prompt("What is your bill total?"));
+var percentToTip = parseInt(prompt("What percentage would you like to tip?"));
+var amountToTip = calculateTip(percentToTip, billTotal).toFixed();
 
 alert("You should include $" + amountToTip + " as your tip.");
 
@@ -117,7 +115,7 @@ alert("You should include $" + amountToTip + " as your tip.");
  */
 
 function applyDiscount(priceBeforeDiscount, discountPercent) {
-	return priceBeforeDiscount * discountPercent;
+	return priceBeforeDiscount - (priceBeforeDiscount * discountPercent);
 }
 
 console.log(applyDiscount(100, 0.25));
