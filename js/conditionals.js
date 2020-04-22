@@ -66,32 +66,36 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Refactor your above function to use a switch-case statement
  */
 
-// switch (randomColor) {
-// 	case "red":
-// 		alert("Red is the color of a fire engine.");
-// 		break;
-// 	case "orange":
-// 		alert("Oranges are orange.");
-// 		break;
-// 	case "yellow":
-// 		alert("The sun is yellow.");
-// 		break;
-// 	case "green":
-// 		alert("The grass is always greener...");
-// 		break;
-// 	case "blue":
-// 		alert("The ocean is blue.");
-// 		break;
-// 	case "indigo":
-// 		alert("Indigo is a fancy purple.");
-// 		break;
-// 	case "violet":
-// 		alert("Violets aren't violet.");
-// 		break;
-// 	default:
-// 		alert("I don't know anything about " + randomColor + ".");
-// 		break;
+// function analyzeColorSwitch(str) {
+// 	switch (str) {
+// 		case "red":
+// 			alert("Red is the color of a fire engine.");
+// 			break;
+// 		case "orange":
+// 			alert("Oranges are orange.");
+// 			break;
+// 		case "yellow":
+// 			alert("The sun is yellow.");
+// 			break;
+// 		case "green":
+// 			alert("The grass is always greener...");
+// 			break;
+// 		case "blue":
+// 			alert("The ocean is blue.");
+// 			break;
+// 		case "indigo":
+// 			alert("Indigo is a fancy purple.");
+// 			break;
+// 		case "violet":
+// 			alert("Violets aren't violet.");
+// 			break;
+// 		default:
+// 			alert("I don't know anything about " + str + ".");
+// 			break;
+// 	}
 // }
+//
+// console.log(analyzeColorSwitch(randomColor));
 
 /**
  * TODO:
@@ -130,13 +134,13 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // 	if (luckyNumber === 0) {
 // 		return totalAmount;
 // 	} else if (luckyNumber === 1) {
-// 		return (totalAmount * 0.90).toFixed(2);
+// 		return (totalAmount * 0.90);
 // 	} else if (luckyNumber === 2) {
-// 		return (totalAmount * 0.75).toFixed(2);
+// 		return (totalAmount * 0.75);
 // 	} else if (luckyNumber === 3) {
-// 		return (totalAmount * 0.65).toFixed(2);
+// 		return (totalAmount * 0.65);
 // 	} else if (luckyNumber === 4) {
-// 		return (totalAmount * 0.50).toFixed(2);
+// 		return (totalAmount * 0.50);
 // 	} else {
 // 		return 0;
 // 	}
@@ -157,23 +161,9 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
 //
-// var totalAmount = prompt("What is your bill total?");
+// var totalAmount = parseFloat(prompt("What is your bill total?"));
 //
-// var priceAfterDiscount = calculateTotal(luckyNumber, totalAmount);
-//
-// if (luckyNumber === 0) {
-// 	alert("Sorry no discount for you. Your lucky number is " + luckyNumber + ". Your initial total price was $" + totalAmount + " and your amount due is $" + priceAfterDiscount + ".");
-// } else if (luckyNumber === 1) {
-// 	alert("Congrats! You get a 10% discount! Your lucky number is " + luckyNumber + ". Your initial total price was $" + totalAmount + " and your amount due is $" + priceAfterDiscount + ".");
-// } else if (luckyNumber === 2) {
-// 	alert("Congrats! You get a 25% discount! Your lucky number is " + luckyNumber + ". Your initial total price was $" + totalAmount + " and your amount due is $" + priceAfterDiscount + ".");
-// } else if (luckyNumber === 3) {
-// 	alert("Congrats! You get a 35% discount! Your lucky number is " + luckyNumber + ". Your initial total price was $" + totalAmount + " and your amount due is $" + priceAfterDiscount + ".");
-// } else if (luckyNumber === 4) {
-// 	alert("Congrats! You get a 50% discount! Your lucky number is " + luckyNumber + ". Your initial total price was $" + totalAmount + " and your amount due is $" + priceAfterDiscount + ".");
-// } else {
-// 	alert("Congrats! Your purchase is free! Your lucky number is " + luckyNumber + ". Your initial total price was $" + totalAmount + " and your amount due is $0.");
-// }
+// alert("Your lucky number is " + luckyNumber + ". Your initial total price was $" + totalAmount.toFixed(2) + " and your amount due is $" + calculateTotal(luckyNumber, totalAmount).toFixed(2) + ".");
 
 /**
  * TODO:
@@ -192,14 +182,29 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * HINT: The way we prompt for a value could be improved
  */
 
-var wantsToEnterNumber = confirm("Would you like to enter a number?");
-
-if (wantsToEnterNumber) {
-	var num = prompt("What is your number?");
-} else {
-	alert("Okay. Come back when you would like to enter a number.")
+function evenOrOdd(num) {
+	return (num % 2 === 0) ? num + " is an even number" : num + " is an odd number";
 }
 
-if (typeof num !== "number") {
-	alert("Sorry, you did not enter a number.");
+function plusOneHundred(num) {
+	return num + 100;
+}
+
+function negOrPos(num) {
+	return (num > 0) ? num + " is a positive number" : num + " is a negative number";
+}
+
+function numberGame() {
+	if (confirm("Want to play a game?")) {
+		var userNum = parseFloat(prompt("Tell me a number."));
+		if (!isNaN(userNum)) {
+			alert(evenOrOdd(userNum));
+			alert(plusOneHundred(userNum));
+			alert(negOrPos(userNum));
+		} else {
+			alert("You're no fun...");
+		}
+	} else {
+		alert("You're no fun...");
+	}
 }
