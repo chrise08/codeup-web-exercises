@@ -10,7 +10,7 @@
 // showMultiplicationTable(5);
 
 // ----------Question 2----------
-// var randomNumber = Math.floor(Math.random() * 180) + 20;
+// var randomNumber = Math.floor(Math.random() * 181) + 20;
 
 // function evenOrOdd(num) {
 // 	return (num % 2 === 0) ? num + " is an even number" : num + " is an odd number";
@@ -29,6 +29,12 @@
 // 		str += i;
 // 	}
 // 	console.log(str);
+// }
+
+// OR
+
+// for (var i = 1; i < 10; i++) {
+//     console.log(i.toString().repeat(i));
 // }
 
 // ----------Question 4----------
