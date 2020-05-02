@@ -46,12 +46,21 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+    
+    shoppers.forEach(function (shopper) {
+        var priceAfterDiscount = (shopper.amount * 0.88);
+        if (shopper.amount >= 200) {
+            console.log(shopper.name + " - Amount before discount: $" + shopper.amount + "\nAmount after 12% discount: $" + priceAfterDiscount.toFixed(2));
+        } else {
+            console.log(shopper.name + " - You did not buy enough products to qualify for the discount. Your price is: $" + (shopper.amount).toFixed(2));
+        }
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -65,6 +74,48 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    
+    var books = [
+        {
+            title: "The Hobbit",
+            author: {
+                firstName: "J.R.R.",
+                lastName: "Tolkien"
+            }
+        },
+        {
+            title: "The Sorcerer's Stone",
+            author: {
+                firstName: "J.K.",
+                lastName: "Rowling"
+            }
+        },
+        {
+            title: "The Bourne Identity",
+            author: {
+                firstName: "Robert",
+                lastName: "Ludlum"
+            }
+        },
+        {
+            title: "New Earth",
+            author: {
+                firstName: "Ben",
+                lastName: "Bova"
+            }
+        },
+        {
+            title: "The Great Gatsby",
+            author: {
+                firstName: "F. Scott",
+                lastName: "Fitzgerald"
+            }
+        },
+    ]
+    
+    // console.log(books[0].title);
+    // console.log(books[0].author.firstName);
+    // console.log(books[0].author.lastName);
 
     /**
      * TODO:
@@ -90,6 +141,13 @@
      *      ---
      *      ...
      */
+    
+    books.forEach(function (book) {
+        console.log("Book # " + ((books.indexOf(book)) + 1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("---");
+    })
 
     /**
      * Bonus:
