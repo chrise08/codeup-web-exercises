@@ -160,6 +160,17 @@
      *   `showBookInfo` function.
      */
     
-    
+    function createBook(title, fName, lName, arr) {
+        var newBook = {
+            title: title,
+            author: {
+                firstName: fName,
+                lastName: lName
+            }
+        };
+        arr.push(newBook);
+        return arr;
+    };
 
+    createBook("Red Fish, Blue Fish", "Doctor", "Seuss", books);
 })();
