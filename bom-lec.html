@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BOM Lecture</title>
+</head>
+<body>
+	<h1>BOM</h1>
+	<script>
+		(function() {
+		
+		var i = 1;
+		var pillow = "MyPillow";
+		var arr = [1,2,3];
+		
+		// console.log(window); // how to open and inspect the window object of the browswer
+		//
+		// alert("Hi, register for my site!");
+		// window.alert("You really should register for my site!"); // these are the same
+		
+		// setInterval
+		
+		// Two arguments for the setInterval method.
+		// 1: callback function (handler) - can also be a pre-defined function (just use function name, without paren)
+		// 2: the time (in milliseconds) before the code runs again
+		
+		// How to clear the interval ID?
+		// 1 - set your setInterval method to a variable, because the return of this method is an interval ID
+		// 2 - define the stop point (clearInterval(intervalID))
+		
+		var intervalID = setInterval(function () {
+			var yesNo = confirm("Do you like websites chronicling the news surrounding the murder hornets?");
+			if (yesNo) {
+				alert("I know you just wanted to stop hearing about the murder hornets. I don't blame you.");
+				clearInterval(intervalID);
+			}
+		}, 3000);
+		
+		// with pre-defined function
+		
+		function handler() {
+			var yesNo = confirm("Do you like websites chronicling the news surrounding the murder hornets?");
+			if (yesNo) {
+				alert("I know you just wanted to stop hearing about the murder hornets. I don't blame you.");
+				clearInterval(intervalID);
+			}
+		}
+		
+		var intervalID = setInterval(handler, 3000);
+		
+		var x = 1;
+		var runThreeTimes = setInterval(function () {
+			alert("Fun times ahead this year! Be sure to register with our newspaper for more information on GloboCo!");
+			if (x === 3) {
+				clearInterval(runThreeTimes);
+			} else {
+				x++;
+			}
+		}, 4500);
+		
+		// setTimeout
+		
+		// similar to setInterval, but only meant to happen once
+		
+		setTimeout(function () {
+			alert("CONGRATULATIONS! YOU WON!");
+		}, 9000);
+		
+		// window.location = "http://neopets.com"; // can set destination of the browser window
+		
+		if (confirm("Did you make a boo-boo?")) {
+			location.reload();
+		}
+		})();
+		
+	</script>
+</body>
+</html>
