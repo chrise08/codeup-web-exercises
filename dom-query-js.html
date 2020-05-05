@@ -25,6 +25,11 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button type="Submit" id="js-is-cool">Door #1</button>
+<button type="Submit" id="subhead-to-blue">Door #2</button>
+<button type="Submit" id="listitem-to-grey">Door #3</button>
+<button type="Submit" id="listitem1-to-blue">Door #4</button>
+
 <script>
     (function() {
         "use strict";
@@ -32,7 +37,7 @@
         var mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerText = "Javascript is Cool";
+        mainHeader.innerHTML = "Javascript is Cool";
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
@@ -44,24 +49,26 @@
         var listItems = document.querySelectorAll("li");
     
         // TODO: Set text color on every other list item to grey
+        // TODO: Set text color of li with dbid = 1 to blue
         for (var i = 0; i < listItems.length; i++) {
             if (i % 2 === 0) {
                 listItems[i].style.color = "grey";
             }
-        }
-        
-        // TODO: Set text color of li with dbid = 1 to blue
-        for (var i = 0; i < listItems.length; i++) {
-            if (listItems[i].getAttribute("data-dbid") == 1) {
+            if (listItems[i].getAttribute("data-dbid") === "1") {
                 listItems[i].style.color = "blue";
             }
         }
+        
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs[0].innerText = "Mission Accomplished!";
+        
+        // Events below
+        
+        
         
     })();
 </script>
