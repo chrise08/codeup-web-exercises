@@ -28,6 +28,37 @@
 			center: {lng: -98.4916, lat: 29.4252},
 		});
 		
+		// customizing the map
+		
+			// map.setCenter()
+			// map.setZoom()
+		
+		// markers
+		
+		var marker = new mapboxgl.Marker();
+		
+		marker.setLngLat({lng: -98.4916, lat: 29.4252});
+		marker.addTo(map);
+		
+		// OR AS:
+		
+		// marker
+		// 	.setLngLat({lng: -98.4916, lat: 29.4252})
+		// 	.addTo(map);
+		
+		// popups
+		
+		var popup = new mapboxgl.Popup();
+		
+		popup.setHTML("<h3>San Antonio!</h3>")
+		
+		marker.setPopup(popup);
+		
+		// events
+		
+		map.on("click", function () {
+			console.log("Hello");
+		});
 		
 	</script>
 
