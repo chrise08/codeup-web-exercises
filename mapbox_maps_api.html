@@ -29,9 +29,15 @@
 			console.log(result);
 			map.setCenter(result);
 			map.on('load', function() {
-				map.setZoom(15);
+				map.setZoom(11);
 			});
 		});
+		
+		var markerFavRestaurant = new mapboxgl.Marker();
+		
+		markerFavRestaurant
+			.setLngLat({lng: -97.763276, lat: 30.263832})
+			.addTo(map);
 		
 		
 	</script>
