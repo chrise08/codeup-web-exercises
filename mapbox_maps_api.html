@@ -15,7 +15,6 @@
 	<script src="js/mapbox-geocode-util.js"></script>
 	<script>
 		
-		
 		mapboxgl.accessToken = mapboxKey;
 		
 		var map = new mapboxgl.Map({
@@ -25,27 +24,66 @@
 			center: {lng: -98.532293, lat: 29.458419},
 		});
 		
-		geocode("Austin, Texas", mapboxKey).then(function(result) {
-			console.log(result);
-			map.setCenter(result);
-			map.on('load', function() {
-				map.setZoom(11);
+		// geocode("Austin, Texas", mapboxKey).then(function(result) {
+		// 	console.log(result);
+		// 	map.setCenter(result);
+		// 	map.on('load', function() {
+		// 		map.setZoom(11);
+		// 	});
+		// });
+		//
+		// var markerFavRestaurant = new mapboxgl.Marker();
+		//
+		// markerFavRestaurant
+		// 	.setLngLat({lng: -97.763276, lat: 30.263832})
+		// 	.addTo(map);
+		//
+		// var popupFavRestaurant = new mapboxgl.Popup();
+		//
+		// popupFavRestaurant
+		// 	.setHTML("Chuy's - Barton Springs");
+		//
+		// markerFavRestaurant
+		// 	.setPopup(popupFavRestaurant);
+		
+		// Uncomment below for step 8
+		
+		var favAustinRestaurants = [
+			{
+				name: "Chuy's",
+				cuisine: "Tex-Mex",
+				address: "1728 Barton Springs Rd, Austin, TX 78704",
+				hours: "Sun-Thurs: 11am-8pm\nFri & Sat: 11am-9pm"
+			},
+			{
+				name: "Torchy's Tacos",
+				cuisine: "Mexican",
+				address: "3005 S Lamar Blvd, Austin, TX 78704",
+				hours: "Sun-Thurs: 7am-10pm\nFri & Sat: 8am-11pm"
+			},
+			{
+				name: "Hunan Lion",
+				cuisine: "Chinese",
+				address: "4006 S Lamar Blvd, Austin, TX 78704",
+				hours: "Sun: 11:30am-10pm\nMon-Fri: 11am-10:30pm\nSat: 11:30am-10:30pm"
+			}
+		];
+		
+		
+		favAustinRestaurants.forEach(function (restaurant) {
+			var markerFavRestaurant = new mapboxgl.Marker();
+			
+			var popupFavRestaurant = new mapboxgl.Popup();
+			
+			markerFavRestaurant
+				.setPopup(popupFavRestaurant);
+			
+			geocode(restaurant.address, mapboxKey).then(function(result) {
+				markerFavRestaurant
+					.setLngLat(result)
+					.addTo(map);
 			});
 		});
-		
-		var markerFavRestaurant = new mapboxgl.Marker();
-		
-		markerFavRestaurant
-			.setLngLat({lng: -97.763276, lat: 30.263832})
-			.addTo(map);
-		
-		var popupFavRestaurant = new mapboxgl.Popup();
-		
-		popupFavRestaurant
-			.setHTML("Chuy's - Barton Springs");
-		
-		markerFavRestaurant
-			.setPopup(popupFavRestaurant);
 		
 		
 	</script>
