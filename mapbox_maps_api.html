@@ -28,7 +28,9 @@
 		geocode("Austin, Texas", mapboxKey).then(function(result) {
 			console.log(result);
 			map.setCenter(result);
-			map.setZoom(13);
+			map.on('load', function() {
+				map.setZoom(15);
+			});
 		});
 		
 		
