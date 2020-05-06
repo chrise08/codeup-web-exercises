@@ -15,6 +15,7 @@
 	<div id='map' style='width: 900px; height: 800px;'></div>
 	
 	<script src="js/keys.js"></script>
+	<script src="js/mapbox-geocode-util.js"></script>
 	<script>
 		
 		
@@ -59,6 +60,15 @@
 		map.on("click", function () {
 			console.log("Hello");
 		});
+		
+		// geocode - see mapbox-geocode-util.js
+		
+		geocode("600 Navarro St #350, San Antonio, TX 78205", mapboxKey).then(function(result) {
+			console.log(result);
+			map.setCenter(result);
+			map.setZoom(20);
+		});
+		
 		
 	</script>
 
