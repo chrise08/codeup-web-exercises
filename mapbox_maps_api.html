@@ -9,5 +9,30 @@
 </head>
 <body>
 
+	<div id='map' style='width: 900px; height: 800px;'></div>
+	
+	<script src="js/keys.js"></script>
+	<script src="js/mapbox-geocode-util.js"></script>
+	<script>
+		
+		
+		mapboxgl.accessToken = mapboxKey;
+		
+		var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v9',
+			zoom: 10,
+			center: {lng: -98.532293, lat: 29.458419},
+		});
+		
+		geocode("Austin, Texas", mapboxKey).then(function(result) {
+			console.log(result);
+			map.setCenter(result);
+			map.setZoom(13);
+		});
+		
+		
+	</script>
+
 </body>
 </html>
