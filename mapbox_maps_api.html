@@ -39,6 +39,14 @@
 			.setLngLat({lng: -97.763276, lat: 30.263832})
 			.addTo(map);
 		
+		var popupFavRestaurant = new mapboxgl.Popup();
+		
+		popupFavRestaurant
+			.setHTML("Chuy's - Barton Springs");
+		
+		markerFavRestaurant
+			.setPopup(popupFavRestaurant);
+		
 		
 	</script>
 
