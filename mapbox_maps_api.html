@@ -53,38 +53,35 @@
 				name: "<h2>Chuy's</h2>",
 				cuisine: "<em>Tex-Mex</em>",
 				address: "1728 Barton Springs Rd, Austin, TX 78704",
-				hours: "Sun-Thurs: 11am-8pm<br>Fri & Sat: 11am-9pm",
-				coords: {lng: -97.763263, lat: 30.263825}
+				hours: "Sun-Thurs: 11am-8pm<br>Fri & Sat: 11am-9pm"
 			},
 			{
 				name: "<h2>Torchy's Tacos</h2>",
 				cuisine: "<em>Mexican</em>",
 				address: "3005 S Lamar Blvd, Austin, TX 78704",
-				hours: "Sun-Thurs: 7am-10pm<br>Fri & Sat: 8am-11pm",
-				coords: {lng: -97.784276, lat: 30.241667}
+				hours: "Sun-Thurs: 7am-10pm<br>Fri & Sat: 8am-11pm"
 			},
 			{
 				name: "<h2>Hunan Lion</h2>",
 				cuisine: "<em>Chinese</em>",
 				address: "4006 S Lamar Blvd, Austin, TX 78704",
-				hours: "Sun: 11:30am-10pm<br>Mon-Fri: 11am-10:30pm<br>Sat: 11:30am-10:30pm",
-				coords: {lng: -97.793744, lat: 30.237193}
+				hours: "Sun: 11:30am-10pm<br>Mon-Fri: 11am-10:30pm<br>Sat: 11:30am-10:30pm"
 			}
 		];
 		
 		
 		favAustinRestaurants.forEach(function (restaurant) {
-			var popupFavRestaurant = new mapboxgl.Popup();
+			geocode(restaurant.address, mapboxKey).then(function (coords) {
+				var markerFavRestaurant = new mapboxgl.Marker()
+					.setLngLat(coords)
+					.addTo(map);
+				
+				var popupFavRestaurant = new mapboxgl.Popup()
+					.setHTML(restaurant.name + "<br>" + restaurant.cuisine + "<br>" + restaurant.address + "<br>" + restaurant.hours);
+				markerFavRestaurant
+					.setPopup(popupFavRestaurant);
+			});
 			
-			popupFavRestaurant
-				.setHTML(restaurant.name + "<br>" + restaurant.cuisine + "<br>" + restaurant.address + "<br>" + restaurant.hours);
-			
-			var markerFavRestaurant = new mapboxgl.Marker();
-			
-			markerFavRestaurant
-				.setPopup(popupFavRestaurant)
-				.setLngLat(restaurant.coords)
-				.addTo(map);
 			
 			
 		});
