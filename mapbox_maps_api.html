@@ -74,10 +74,14 @@
 		
 		
 		favAustinRestaurants.forEach(function (restaurant) {
-			var popupFavRestaurant = new mapboxgl.Popup()
+			var popupFavRestaurant = new mapboxgl.Popup();
+			
+			popupFavRestaurant
 				.setHTML(restaurant.name + "<br>" + restaurant.cuisine + "<br>" + restaurant.address + "<br>" + restaurant.hours);
 			
-			var markerFavRestaurant = new mapboxgl.Marker()
+			var markerFavRestaurant = new mapboxgl.Marker();
+			
+			markerFavRestaurant
 				.setPopup(popupFavRestaurant)
 				.setLngLat(restaurant.coords)
 				.addTo(map);
