@@ -20,8 +20,8 @@
 		var map = new mapboxgl.Map({
 			container: 'map',
 			style: 'mapbox://styles/mapbox/streets-v9',
-			zoom: 10,
-			center: {lng: -98.532293, lat: 29.458419},
+			zoom: 11,
+			center: {lng: -97.740532, lat: 30.274584},
 		});
 		
 		// geocode("Austin, Texas", mapboxKey).then(function(result) {
@@ -50,39 +50,39 @@
 		
 		var favAustinRestaurants = [
 			{
-				name: "Chuy's",
-				cuisine: "Tex-Mex",
+				name: "<h2>Chuy's</h2>",
+				cuisine: "<em>Tex-Mex</em>",
 				address: "1728 Barton Springs Rd, Austin, TX 78704",
-				hours: "Sun-Thurs: 11am-8pm\nFri & Sat: 11am-9pm"
+				hours: "Sun-Thurs: 11am-8pm<br>Fri & Sat: 11am-9pm",
+				coords: {lng: -97.763263, lat: 30.263825}
 			},
 			{
-				name: "Torchy's Tacos",
-				cuisine: "Mexican",
+				name: "<h2>Torchy's Tacos</h2>",
+				cuisine: "<em>Mexican</em>",
 				address: "3005 S Lamar Blvd, Austin, TX 78704",
-				hours: "Sun-Thurs: 7am-10pm\nFri & Sat: 8am-11pm"
+				hours: "Sun-Thurs: 7am-10pm<br>Fri & Sat: 8am-11pm",
+				coords: {lng: -97.784276, lat: 30.241667}
 			},
 			{
-				name: "Hunan Lion",
-				cuisine: "Chinese",
+				name: "<h2>Hunan Lion</h2>",
+				cuisine: "<em>Chinese</em>",
 				address: "4006 S Lamar Blvd, Austin, TX 78704",
-				hours: "Sun: 11:30am-10pm\nMon-Fri: 11am-10:30pm\nSat: 11:30am-10:30pm"
+				hours: "Sun: 11:30am-10pm<br>Mon-Fri: 11am-10:30pm<br>Sat: 11:30am-10:30pm",
+				coords: {lng: -97.793744, lat: 30.237193}
 			}
 		];
 		
 		
 		favAustinRestaurants.forEach(function (restaurant) {
-			var markerFavRestaurant = new mapboxgl.Marker();
+			var popupFavRestaurant = new mapboxgl.Popup()
+				.setHTML(restaurant.name + "<br>" + restaurant.cuisine + "<br>" + restaurant.address + "<br>" + restaurant.hours);
 			
-			var popupFavRestaurant = new mapboxgl.Popup();
+			var markerFavRestaurant = new mapboxgl.Marker()
+				.setPopup(popupFavRestaurant)
+				.setLngLat(restaurant.coords)
+				.addTo(map);
 			
-			markerFavRestaurant
-				.setPopup(popupFavRestaurant);
 			
-			geocode(restaurant.address, mapboxKey).then(function(result) {
-				markerFavRestaurant
-					.setLngLat(result)
-					.addTo(map);
-			});
 		});
 		
 		
