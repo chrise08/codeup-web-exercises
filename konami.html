@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Konami Code</title>
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/konami.css">
+</head>
+<body>
+<h1>Enter your cheat code + Enter:</h1>
+<div id="img-container"></div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+	"use strict";
+	
+	// function isEqual() {
+	// 	// if length is not equal
+	// 	if(code.length !== b.length) {
+	// 		return false;
+	// 	} else {
+	// 		// comparing each element of array
+	// 		for (var i = 0; i < code.length; i++)
+	// 			if(a[i] !== b[i]) {
+	// 				return true;
+	// 			}
+	// 	}
+	// }
+	
+	var code = [];
+	var konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+	
+	$(document).keyup(function(e){
+		code.push(e.key);
+		console.log(code);
+		if (code.join(",") === konamiCode.join(",")) {
+			$("h1").html("Konami Code!");
+			$("#img-container").html("<img src='img/konami-code.gif' alt='konami code'>");
+			setTimeout(function () {
+				$("h1").html("+ 30 lives!");
+			}, 2000);
+		}
+	});
+	
+	// function whatCode(code) {
+	// 	var counter = 0;
+	// 	for (var i = 0; i < code.length; i++) {
+	// 		if (code[i] === konamiCode[i]) {
+	// 			counter += 1;
+	// 		}
+	// 	}
+	// 	if (counter === 11) {
+	// 		return "Konami";
+	// 	}
+	// }
+	//
+	// if (whatCode(code) === "Konami") {
+	// 	$('h1').html("+ 30 lives!");
+	// }
+	
+	// switch (whatCode()) {
+	// 	case "Konami":
+	// 		$('h1').html("+ 30 lives!");
+	// }
+</script>
+</body>
+</html>
