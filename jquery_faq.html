@@ -76,9 +76,19 @@
 			$("dt").click(function () {
 				$(this).toggleClass("highlight");
 				if ($(this).hasClass("highlight")) {
-					$(this).css("background-color", "red");
+					// $(this).css("background-color", "red");
+					$(this).css({
+			            "background-image": "url('img/american-flag.webp')",
+						"background-size": "100% 100%",
+						"background-repeat": "no-repeat",
+					});
 				} else if (!$(this).hasClass("highlight")){
-					$(this).css("background-color", "transparent");
+					// $(this).css("background-color", "transparent");
+					$(this).css({
+			            "background-image": "none",
+			            "background-size": "auto",
+			            "background-repeat": "repeat",
+					});
 				}
 			})
 			
