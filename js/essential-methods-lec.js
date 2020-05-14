@@ -88,16 +88,34 @@ $(document).ready(function() {
 
     // TODO TOGETHER: console log each list element's text
 
+    $("li").each(function () {
+        console.log($(this).html());
+    });
+    
     // TODO TOGETHER: select all list elements and console log the first match
-
+    
+    console.log($("li").first()); // returns a node object; which is why we can method-chain
+    
     // TODO TOGETHER: select all list elements and console log the last match
-
+    
+    console.log($("li").last()); // returns a node object; which is why we can method-chain
+    
     // TODO TOGETHER: When I click on a list element, highlight its parent
+    
+    $("li").click(function () {
+        $(this).parent().css("background-color", "yellow");
+    });
 
     // TODO TOGETHER: When I click into a <ul>, console log last child in that group
 
-    // TODO TOGETHER: When I click on any list element, console log the next element
+    $('ul').click(function () {
+        $(this).children().last();
+    })
+    
+    // TODO TOGETHER: When I click on the Ravenclaw heading, change bg color of list to blue
 
-
+    $("#r-heading").click(function () {
+        $(this).next().css("background-color", "blue");
+    })
 
 });
