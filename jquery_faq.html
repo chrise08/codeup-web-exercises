@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FAQs</title>
+</head>
+<body>
+	<h2>National Parks FAQs</h2>
+
+	<dl>
+		<dt>How old is the National Park System?</dt>
+		<dd>The Service was created by an act signed by President Woodrow Wilson on August 25, 1916, but President Ulysses S. Grant signed an act on March 1, 1872 which established Yellowstone National Park as the nation's first national park.</dd>
+		<br>
+		<dt>How many areas are in the National Park System?</dt>
+		<dd>419 areas across every state covering more than 85 million acres</dd>
+		<br>
+		<dt>How many employees are in the National Park Service?</dt>
+		<dd>Permanent: ~20,000</dd>
+		<dd>Volunteers: +279,000 in 2019</dd>
+		<br>
+		<dt>What is the largest national park?</dt>
+		<dd><a href="https://www.nps.gov/wrst/index.htm" target="_blank">Wrangell-St. Elias National Park and Preserve</a>, AK: 13.2 million acres</dd>
+		<br>
+		<dt>What is the smallest national park?</dt>
+		<dd><a href="https://www.nps.gov/thko/index.htm" target="_blank">Thaddeus Kosciuszko National Memorial</a>, PA: 0.02 acres</dd>
+		<br>
+		<dt>What is the most-visited national park?</dt>
+		<dd><a href="https://www.nps.gov/aboutus/visitation-numbers.htm" target="_blank">View the list of most-visited sites</a></dd>
+		<br>
+		<dt>Can I bring my pet with me to a national park?</dt>
+		<dd>Some national parks welcome pets - each park has it's own <a href="https://www.nps.gov/subjects/pets/index.htm" target="_blank">policy</a> regarding pets.</dd>
+		<br>
+		<dt>Is it free to visit a national park?</dt>
+		<dd>Less than <a href="https://www.nps.gov/planyourvisit/fee-free-parks-state.htm" target="_blank">one-third</a> of the national parks charge entrance fees.</dd>
+		<br>
+		<dt>Where can I find a park map?</dt>
+		<dd>View maps on a <a href="https://www.nps.gov/findapark/index.htm" target="_blank">specific park's website</a>.</dd>
+		<br>
+		<dt>How do I apply for a job with the National Park Service?</dt>
+		<dd>Jobs are posted on <a href="https://www.usajobs.gov/Search?k=%27national%20park%20service%27">USAJOBs</a>.</dd>
+	</dl>
+	
+	<button type="button">Answers Off</button>
+	
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		
+		dl {
+			width: 50%;
+		}
+	</style>
+	
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+		
+			$("dd").addClass("invisible");
+			
+			$("button").click(function () {
+				$("dd").toggleClass("invisible");
+				if ($("dd").hasClass("invisible")) {
+					$("dd").css("visibility", "hidden");
+					$("button").html("Answers Off");
+				} else if (!$("dd").hasClass("invisible")) {
+					$("dd").css("visibility", "visible");
+					$("button").html("Answers On");
+				}
+			})
+			
+			if ($("dd").hasClass("invisible")) {
+				$("dd").css("visibility", "hidden");
+			}
+			
+			$("dt").click(function () {
+				$(this).toggleClass("highlight");
+				if ($(this).hasClass("highlight")) {
+					$(this).css("background-color", "red");
+				} else if (!$(this).hasClass("highlight")){
+					$(this).css("background-color", "transparent");
+				}
+			})
+			
+		});
+	</script>
+</body>
+</html>
