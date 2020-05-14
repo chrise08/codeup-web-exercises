@@ -8,60 +8,42 @@
 </head>
 <body>
 <h1>Enter your cheat code + Enter:</h1>
+<div class="sound-effect"></div>
 <div id="img-container"></div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
 	"use strict";
 	
-	// function isEqual() {
-	// 	// if length is not equal
-	// 	if(code.length !== b.length) {
-	// 		return false;
-	// 	} else {
-	// 		// comparing each element of array
-	// 		for (var i = 0; i < code.length; i++)
-	// 			if(a[i] !== b[i]) {
-	// 				return true;
-	// 			}
-	// 	}
-	// }
-	
+	// cheat codes
 	var code = [];
 	var konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+	var mortalKombatCode = ["a", "b", "a", "c", "a", "b", "b"];
+	var comboBreakerCode = ["ArrowDown", "Enter"];
 	
 	$(document).keyup(function(e){
 		code.push(e.key);
 		console.log(code);
 		if (code.join(",") === konamiCode.join(",")) {
+			$(".sound-effect").html('<iframe src="mp3/fairy_tail__wow.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> ')
 			$("h1").html("Konami Code!");
-			$("#img-container").html("<img src='img/konami-code.gif' alt='konami code'>");
+			$("#img-container").html("<img src='img/konami-code.gif' alt='konami code' style='height: 200px; width: 200px'>");
+			$("body").css("background-color", "darkorange");
 			setTimeout(function () {
 				$("h1").html("+ 30 lives!");
 			}, 2000);
+		} else if (code.join(",") === mortalKombatCode.join(",")) {
+			$(".sound-effect").html('<iframe src="mp3/fatality.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> ')
+			$("h1").html("Mortal Kombat Blood Mode!");
+			$("#img-container").html("<img src='img/mortal-kombat.jpeg' alt='mortal kombat' style='height: 200px; width: 200px'>");
+			$("body").css("background-color", "crimson");
+		} else if (code.join(",") === comboBreakerCode.join(",")) {
+			$(".sound-effect").html('<iframe src="mp3/combo-breaker.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> ')
+			$("h1").html("Killer Instinct Easy Breaker!");
+			$("#img-container").html("<img src='img/combo-breaker.gif' alt='combo breaker' style='height: 270px; width: 480px'>");
+			$("body").css("background-color", "darkturquoise");
 		}
 	});
-	
-	// function whatCode(code) {
-	// 	var counter = 0;
-	// 	for (var i = 0; i < code.length; i++) {
-	// 		if (code[i] === konamiCode[i]) {
-	// 			counter += 1;
-	// 		}
-	// 	}
-	// 	if (counter === 11) {
-	// 		return "Konami";
-	// 	}
-	// }
-	//
-	// if (whatCode(code) === "Konami") {
-	// 	$('h1').html("+ 30 lives!");
-	// }
-	
-	// switch (whatCode()) {
-	// 	case "Konami":
-	// 		$('h1').html("+ 30 lives!");
-	// }
 </script>
 </body>
 </html>
