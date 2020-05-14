@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FAQs</title>
+</head>
+<body>
+	<h2>National Parks FAQs</h2>
+
+	<dl>
+		<dt>How old is the National Park System?</dt>
+		<dd>The Service was created by an act signed by President Woodrow Wilson on August 25, 1916, but President Ulysses S. Grant signed an act on March 1, 1872 which established Yellowstone National Park as the nation's first national park.</dd>
+		<br>
+		<dt>How many areas are in the National Park System?</dt>
+		<dd>419 areas across every state covering more than 85 million acres</dd>
+		<br>
+		<dt>How many employees are in the National Park Service?</dt>
+		<dd>Permanent: ~20,000</dd>
+		<dd>Volunteers: +279,000 in 2019</dd>
+		<br>
+		<dt>What is the largest national park?</dt>
+		<dd><a href="https://www.nps.gov/wrst/index.htm" target="_blank">Wrangell-St. Elias National Park and Preserve</a>, AK: 13.2 million acres</dd>
+		<br>
+		<dt>What is the smallest national park?</dt>
+		<dd><a href="https://www.nps.gov/thko/index.htm" target="_blank">Thaddeus Kosciuszko National Memorial</a>, PA: 0.02 acres</dd>
+		<br>
+		<dt>What is the most-visited national park?</dt>
+		<dd><a href="https://www.nps.gov/aboutus/visitation-numbers.htm" target="_blank">View the list of most-visited sites</a></dd>
+		<br>
+		<dt>Can I bring my pet with me to a national park?</dt>
+		<dd>Some national parks welcome pets - each park has it's own <a href="https://www.nps.gov/subjects/pets/index.htm" target="_blank">policy</a> regarding pets.</dd>
+		<br>
+		<dt>Is it free to visit a national park?</dt>
+		<dd>Less than <a href="https://www.nps.gov/planyourvisit/fee-free-parks-state.htm" target="_blank">one-third</a> of the national parks charge entrance fees.</dd>
+		<br>
+		<dt>Where can I find a park map?</dt>
+		<dd>View maps on a <a href="https://www.nps.gov/findapark/index.htm" target="_blank">specific park's website</a>.</dd>
+		<br>
+		<dt>How do I apply for a job with the National Park Service?</dt>
+		<dd>Jobs are posted on <a href="https://www.usajobs.gov/Search?k=%27national%20park%20service%27">USAJOBs</a>.</dd>
+	</dl>
+	
+	<button type="button" id="answer-button">Answers Off</button>
+	
+	<h3 class="park-header">Grand Canyon National Park</h3>
+	<ul class="grand-canyon">
+		<li>277 miles in length</li>
+		<li>18 miles across at its widest</li>
+		<li>4 miles across at its narrowest</li>
+		<li>~6000 feet deep</li>
+	</ul>
+	<br>
+	<h3 class="park-header">Big Bend National Park</h3>
+	<ul class="big-bend">
+		<li>Encompasses 801,163 acres</li>
+		<li>Highest elevation: 7,832 feet (Emory Peak)</li>
+		<li>Lowest elevation: 1,715 feet (Rio Grand River)</li>
+		<li>Established: June 20, 1935</li>
+	</ul>
+	<br>
+	<h3 class="park-header">Yellowstone National Park</h3>
+	<ul class="yellowstone">
+		<li>Encompasses 2,221,766 acres (bigger than Rhode Island and Delaware combined)</li>
+		<li>+10,000 hydrothermal features (geysers, hot springs, mud pots, and fumaroles)</li>
+		<li>Yellowstone Lake is the largest high elevation lake in North America at 131.7 sq. miles of surface area</li>
+		<li>~1000 miles of hiking trails</li>
+	</ul>
+	<br>
+	<button type="button" id="yellow-submarine">We All Live in a Yellow Submarine!</button>
+	
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		
+		dl {
+			width: 50%;
+		}
+	</style>
+	
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+		
+			$("dd").addClass("invisible");
+			
+			$("#answer-button").click(function () {
+				$("dd").toggleClass("invisible");
+				if ($("dd").hasClass("invisible")) {
+					$("dd").css("visibility", "hidden");
+					$("#answer-button").html("Answers Off");
+				} else if (!$("dd").hasClass("invisible")) {
+					$("dd").css("visibility", "visible");
+					$("#answer-button").html("Answers On");
+				}
+			})
+			
+			if ($("dd").hasClass("invisible")) {
+				$("dd").css("visibility", "hidden");
+			}
+			
+			$("dt").click(function () {
+				$(this).toggleClass("highlight");
+				if ($(this).hasClass("highlight")) {
+					// $(this).css("background-color", "red");
+					$(this).css({
+			            "background-image": "url('img/american-flag.webp')",
+						"background-size": "100% 100%",
+						"background-repeat": "no-repeat",
+					});
+				} else if (!$(this).hasClass("highlight")){
+					// $(this).css("background-color", "transparent");
+					$(this).css({
+			            "background-image": "none",
+			            "background-size": "auto",
+			            "background-repeat": "repeat",
+					});
+				}
+			})
+			
+			$("#yellow-submarine").click(function () {
+				$("ul").each(function () {
+					$(this).children().last().css("background-color", "yellow");
+				});
+			});
+			
+			$(".park-header").click(function () {
+				$(this).next().css("font-weight", "bold");
+			});
+			
+			$("li").click(function () {
+				$(this).parent().children().first().css("color", "blue");
+			})
+			
+		});
+	</script>
+</body>
+</html>
