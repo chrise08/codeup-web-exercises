@@ -167,18 +167,35 @@
 		// Write a javascript function that takes in a number and returns the number raised to the power of four.
 		// If any argument is passed into the function that is not a number, return false.
 		
-		function powerOfFour(num) {
-			if (!isNaN(num)) {
-				return num ** 4;
+		// function powerOfFour(num) {
+		// 	if (!isNaN(num)) {
+		// 		return num ** 4;
+		// 	} else {
+		// 		return false;
+		// 	}
+		// }
+		//
+		// console.log(powerOfFour(4));
+		// console.log(powerOfFour(2));
+		// console.log(powerOfFour(10));
+		// console.log(powerOfFour("Larry"));
+		
+		// Write a JavaScript function that takes in a string and returns the number of words in the string.
+		// If the function is ever passed an argument that is not a string, return the number 0.
+		
+		function wordsInAString(str) {
+			if (typeof str !== "string") {
+				return 0;
 			} else {
-				return false;
+				var strArr = str.split(" ");
+				return strArr.length;
 			}
 		}
 		
-		console.log(powerOfFour(4));
-		console.log(powerOfFour(2));
-		console.log(powerOfFour(10));
-		console.log(powerOfFour("Larry"));
+		console.log(wordsInAString("Hello World")); // 2
+		console.log(wordsInAString(5)); // 0
+		console.log(wordsInAString(true)); // 0
+		console.log(wordsInAString("To be or not to be")); // 6
 	
 	</script>
 </body>
