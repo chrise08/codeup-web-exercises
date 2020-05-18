@@ -20,7 +20,7 @@ Use reverse geocoding with the reverseGeocode function to determine what is at 2
 	<script>
 		
 		
-		mapboxgl.accessToken = mapboxKey;
+		mapboxgl.accessToken = MAPBOX_KEY;
 		
 		var map = new mapboxgl.Map({
 			container: 'map',
@@ -29,13 +29,13 @@ Use reverse geocoding with the reverseGeocode function to determine what is at 2
 			center: {lng: -98.532293, lat: 29.458419},
 		});
 		
-		// geocode("Whitefish, Montana", mapboxKey).then(function(result) {
+		// geocode("Whitefish, Montana", MAPBOX_KEY).then(function(result) {
 		// 	console.log(result);
 		// 	map.setCenter(result);
 		// 	map.setZoom(13);
 		// });
 		
-		reverseGeocode({lng: -157.8060, lat: 21.2620}, mapboxKey).then(function(results) {
+		reverseGeocode({lng: -157.8060, lat: 21.2620}, MAPBOX_KEY).then(function(results) {
 			// logs Diamond Head in Hawaii
 			console.log(results);
 		});

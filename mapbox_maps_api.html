@@ -15,7 +15,7 @@
 	<script src="js/mapbox-geocode-util.js"></script>
 	<script>
 		
-		mapboxgl.accessToken = mapboxKey;
+		mapboxgl.accessToken = MAPBOX_KEY;
 		
 		var map = new mapboxgl.Map({
 			container: 'map',
@@ -24,7 +24,7 @@
 			center: {lng: -97.740532, lat: 30.274584},
 		});
 		
-		// geocode("Austin, Texas", mapboxKey).then(function(result) {
+		// geocode("Austin, Texas", MAPBOX_KEY).then(function(result) {
 		// 	console.log(result);
 		// 	map.setCenter(result);
 		// 	map.on('load', function() {
@@ -71,7 +71,7 @@
 		
 		
 		favAustinRestaurants.forEach(function (restaurant) {
-			geocode(restaurant.address, mapboxKey).then(function (coords) {
+			geocode(restaurant.address, MAPBOX_KEY).then(function (coords) {
 				var markerFavRestaurant = new mapboxgl.Marker()
 					.setLngLat(coords)
 					.addTo(map);

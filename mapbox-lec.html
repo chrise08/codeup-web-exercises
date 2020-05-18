@@ -19,7 +19,7 @@
 	<script>
 		
 		
-		mapboxgl.accessToken = mapboxKey;
+		mapboxgl.accessToken = MAPBOX_KEY;
 		
 		var map = new mapboxgl.Map({
 			container: 'map',
@@ -63,7 +63,7 @@
 		
 		// geocode - see mapbox-geocode-util.js
 		
-		geocode("600 Navarro St #350, San Antonio, TX 78205", mapboxKey).then(function(result) {
+		geocode("600 Navarro St #350, San Antonio, TX 78205", MAPBOX_KEY).then(function(result) {
 			console.log(result);
 			map.setCenter(result);
 			map.setZoom(20);
