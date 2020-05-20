@@ -6,13 +6,14 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+<!--	<link rel="stylesheet" href="css/flip-card.css">-->
 </head>
 <body style="background-color: #303030">
 
 <div class="collapse" id="navbarToggleExternalContent">
 	<div class="p-4 d-flex justify-content-end" style="background-color: #424242">
 		<form class="form-inline">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search by city" aria-label="Search" id="city-search">
+			<input class="form-control mr-sm-2" type="text" placeholder="Search by city" aria-label="Search" id="city-search">
 			<button class="btn btn-outline-info my-2 my-sm-0" type="submit" id="search-button">Search</button>
 		</form>
 	</div>
@@ -20,84 +21,28 @@
 
 <nav class="navbar navbar-dark sticky-top d-flex justify-content-between" style="background-color: #424242">
 	<a class="navbar-brand text-info" href="#" target="_blank"><i class="fas fa-temperature-high text-info mr-2"></i>Weath_r</a>
-	<span class="nav-item text-info" id="current-city">Current city: </span>
+	<span class="nav-item text-info" id="current-city">Current location: San Antonio, Texas, United States</span>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon text-info"></span>
 	</button>
 </nav>
 
 <div class="container-fluid my-4">
-	<div class="card-deck">
-		<div class="card" style="background-color: #424242; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
-			<img src="..." class="card-img-top" alt="weather">
-			<div class="card-body">
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Temp | Temp</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Humidity</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Windspeed</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Sunrise | Sunset</li>
-				</ul>
-			</div>
-			<div class="card-footer text-center">
-				<small class="text-muted">Date</small>
-			</div>
-		</div>
-		<div class="card" style="background-color: #424242; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
-			<img src="..." class="card-img-top" alt="weather">
-			<div class="card-body">
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Temp | Temp</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Humidity</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Windspeed</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Sunrise | Sunset</li>
-				</ul>
-			</div>
-			<div class="card-footer text-center">
-				<small class="text-muted">Date</small>
-			</div>
-		</div>
-		<div class="card" style="background-color: #424242; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
-			<img src="..." class="card-img-top" alt="weather">
-			<div class="card-body">
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Temp | Temp</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Humidity</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Windspeed</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Sunrise | Sunset</li>
-				</ul>
-			</div>
-			<div class="card-footer text-center">
-				<small class="text-muted">Date</small>
-			</div>
-		</div>
-		<div class="card" style="background-color: #424242; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
-			<img src="..." class="card-img-top" alt="weather">
-			<div class="card-body">
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Temp | Temp</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Humidity</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Windspeed</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Sunrise | Sunset</li>
-				</ul>
-			</div>
-			<div class="card-footer text-center">
-				<small class="text-muted">Date</small>
-			</div>
-		</div>
-		<div class="card" style="background-color: #424242; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
-			<img src="..." class="card-img-top" alt="weather">
-			<div class="card-body">
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Temp | Temp</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Humidity</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Windspeed</li>
-					<li class="list-group-item text-center text-info" style="background-color: #424242">Sunrise | Sunset</li>
-				</ul>
-			</div>
-			<div class="card-footer text-center">
-				<small class="text-muted">Date</small>
-			</div>
-		</div>
+	<div class="card-deck" id="forecast">
+<!--		<div class="card" style="background-color: #424242; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">-->
+<!--			<img src="..." class="card-img-top" alt="weather">-->
+<!--			<div class="card-body">-->
+<!--				<ul class="list-group list-group-flush">-->
+<!--					<li class="list-group-item text-center text-info" style="background-color: #424242">Temp | Temp</li>-->
+<!--					<li class="list-group-item text-center text-info" style="background-color: #424242">Humidity</li>-->
+<!--					<li class="list-group-item text-center text-info" style="background-color: #424242">Windspeed</li>-->
+<!--					<li class="list-group-item text-center text-info" style="background-color: #424242">Description</li>-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--			<div class="card-footer text-center">-->
+<!--				<small class="text-muted">Date</small>-->
+<!--			</div>-->
+<!--		</div>-->
 	</div>
 	<div class="d-flex">
 		<div id="map" class="mt-4 w-100 flex-grow-1 rounded" style="height: 400px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"></div>
@@ -114,19 +59,86 @@
 	<script>
 		"use strict";
 		
+		var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
+		var weatherOptions = {
+			lat: 29.4241,
+			lon: -98.4936,
+			appid: OPEN_WEATHER_APPID,
+			exclude: 'current, minutely, hourly',
+			units: 'imperial'
+		};
+		
 		$(document).ready(function () {
-		
-		
-		
-		});
-	
-		mapboxgl.accessToken = MAPBOX_KEY;
-		
-		var map = new mapboxgl.Map({
-			container: 'map',
-			style: 'mapbox://styles/mapbox/dark-v10',
-			zoom: 10,
-			center: {lng: -98.532293, lat: 29.458419},
+			
+			mapboxgl.accessToken = MAPBOX_KEY;
+			
+			var map = new mapboxgl.Map({
+				container: 'map',
+				style: 'mapbox://styles/mapbox/dark-v10',
+				zoom: 10,
+				center: {lng: -98.532293, lat: 29.458419},
+			});
+			
+			var marker = new mapboxgl.Marker()
+				.setLngLat([-98.532293, 29.458419])
+				.addTo(map)
+				.setDraggable(true);
+			
+			function parseDate(date) {
+				return new Date(date * 1000).toLocaleDateString();
+			}
+			
+			function weatherForecast() {
+				$.get(weatherUrl, weatherOptions).done(function (data) {
+					console.log(data);
+					for (var i = 0; i < data.daily.length - 3; i++) {
+						var cards = '';
+						cards += '<div class="card" style="background-color: #424242; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">';
+						cards += '<img src=http://openweathermap.org/img/w/' + data.daily[i].weather[0].icon + '.png' + ' class="card-img-top m-auto" alt="weather" style="width: 50px; height: 50px;">';
+						cards += '<div class="card-body pt-0">';
+						cards += '<ul class="list-group list-group-flush">';
+						cards += '<li class="list-group-item text-center text-info" style="background-color: #424242">' + data.daily[i].temp.min.toFixed(0) + '&#176;F | ' + data.daily[i].temp.max.toFixed(0) + '&#176;F</li>';
+						cards += '<li class="list-group-item text-center text-info" style="background-color: #424242">Humidity: ' + data.daily[i].humidity + '%</li>';
+						cards += '<li class="list-group-item text-center text-info" style="background-color: #424242">Windspeed: ' + data.daily[i].wind_speed.toFixed(0) + ' mph</li>';
+						cards += '<li class="list-group-item text-center text-info" style="background-color: #424242">' + data.daily[i].weather[0].description + '</li>';
+						cards += '</ul></div><div class="card-footer text-center">';
+						cards += '<small class="text-muted">' + parseDate(data.daily[i].dt) + '</small></div></div>';
+						$('#forecast').append(cards);
+					}
+				});
+			}
+			
+			weatherForecast();
+			
+			
+			function markerFromSearch() {
+				var lonLat = marker.getLngLat();
+				var lon = lonLat.lng;
+				var lat = lonLat.lat;
+				weatherOptions.lon = lon;
+				weatherOptions.lat = lat;
+				reverseGeocode({lng: lon, lat: lat}, MAPBOX_KEY).then(function(result) {
+					$('#current-city').empty();
+					$('#current-city').append('Current location: ' + result.features[2].place_name);
+					console.log(result);
+				});
+				$('.card').remove();
+				weatherForecast();
+			}
+			
+			marker.on('dragend', markerFromSearch);
+			
+			$('#search-button').click(function (e) {
+				e.preventDefault();
+				var citySearchInput = document.getElementById('city-search').value;
+				geocode(citySearchInput, MAPBOX_KEY).then(function(result) {
+						console.log(result);
+						map.setCenter(result.features[0].center);
+						map.setZoom(13);
+						marker.setLngLat(result.features[0].center);
+						markerFromSearch();
+					});
+			});
 		});
 		
 	</script>
