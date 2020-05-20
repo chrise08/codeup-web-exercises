@@ -6,13 +6,14 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+<!--	<link rel="stylesheet" href="css/flip-card.css">-->
 </head>
 <body style="background-color: #303030">
 
 <div class="collapse" id="navbarToggleExternalContent">
 	<div class="p-4 d-flex justify-content-end" style="background-color: #424242">
 		<form class="form-inline">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search by city" aria-label="Search" id="city-search">
+			<input class="form-control mr-sm-2" type="text" placeholder="Search by city" aria-label="Search" id="city-search">
 			<button class="btn btn-outline-info my-2 my-sm-0" type="submit" id="search-button">Search</button>
 		</form>
 	</div>
@@ -101,7 +102,7 @@
 						cards += '<li class="list-group-item text-center text-info" style="background-color: #424242">Windspeed: ' + data.daily[i].wind_speed.toFixed(0) + ' mph</li>';
 						cards += '<li class="list-group-item text-center text-info" style="background-color: #424242">' + data.daily[i].weather[0].description + '</li>';
 						cards += '</ul></div><div class="card-footer text-center">';
-						cards += '<small class="text-muted">' + parseDate(data.daily[i].dt) + '</small></div></div></div>';
+						cards += '<small class="text-muted">' + parseDate(data.daily[i].dt) + '</small></div></div>';
 						$('#forecast').append(cards);
 					}
 				});
@@ -109,7 +110,8 @@
 			
 			weatherForecast();
 			
-			marker.on('dragend', function () {
+			
+			function markerFromSearch() {
 				var lonLat = marker.getLngLat();
 				var lon = lonLat.lng;
 				var lat = lonLat.lat;
@@ -122,11 +124,22 @@
 				});
 				$('.card').remove();
 				weatherForecast();
+			}
+			
+			marker.on('dragend', markerFromSearch);
+			
+			$('#search-button').click(function (e) {
+				e.preventDefault();
+				var citySearchInput = document.getElementById('city-search').value;
+				geocode(citySearchInput, MAPBOX_KEY).then(function(result) {
+						console.log(result);
+						map.setCenter(result.features[0].center);
+						map.setZoom(13);
+						marker.setLngLat(result.features[0].center);
+						markerFromSearch();
+					});
 			});
 		});
-		
-		
-	
 		
 	</script>
 
