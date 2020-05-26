@@ -11,8 +11,21 @@ $(document).ready(function () {
 		
 	};
 	getUsername('chrise08');
+	
+	const wait = num => {
+		return new Promise ((resolve, reject) => {
+			setTimeout(() => {
+				if (typeof num === "number") {
+					resolve(`You\'ll see this after ${num} milliseconds`)
+				} else {
+					reject("You didn't enter a valid number of milliseconds")
+				}
+			}, num);
+		});
+	};
+	
+	const promise = wait(5000);
+	console.log(promise);
+	promise.then(message => console.log('Promise resolved!', message));
+	promise.catch(message => console.log('Promise rejected!', message));
 });
-
-
-
-
